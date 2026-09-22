@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blickwinkel57 – Professionelle Drohnendienstleistungen</title>
+  <meta name="description" content="Blickwinkel57 – professionelle Drohnendienstleistungen für Luftaufnahmen, Inspektionen, Baustellendokumentation und mehr." />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --surface:#121821;
+      --surface-2:#18212c;
+      --text:#f5f7fa;
+      --muted:#aab5c2;
+      --line:rgba(255,255,255,.08);
+      --accent:#63d6ff;
+      --accent-2:#7ef0c1;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at top right,rgba(99,214,255,.12),transparent 32%),
+        radial-gradient(circle at 10% 25%,rgba(126,240,193,.08),transparent 28%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(calc(100% - 32px),var(--max));margin:auto}
+    .nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(11,15,20,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-weight:800;letter-spacing:.02em;font-size:1.15rem}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:24px;color:var(--muted);font-size:.96rem}
+    .nav-links a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 20px;border-radius:999px;font-weight:700;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#071015;box-shadow:0 10px 35px rgba(99,214,255,.18);
+      transition:.2s transform,.2s opacity;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none}
+    .hero{padding:96px 0 72px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      color:var(--accent-2);font-weight:700;font-size:.92rem;
+      padding:8px 12px;border:1px solid rgba(126,240,193,.2);
+      border-radius:999px;background:rgba(126,240,193,.05)
+    }
+    h1{font-size:clamp(3rem,7vw,6.3rem);line-height:.95;letter-spacing:-.055em;margin:22px 0 22px;max-width:900px}
+    .lead{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--muted);max-width:720px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .hero-card{
+      min-height:470px;border-radius:32px;border:1px solid var(--line);
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0)),
+        radial-gradient(circle at 30% 15%,rgba(99,214,255,.2),transparent 30%),
+        var(--surface);
+      box-shadow:var(--shadow);padding:26px;display:flex;align-items:flex-end;position:relative;overflow:hidden
+    }
+    .hero-card::before{
+      content:"";position:absolute;inset:32px;
+      border:1px solid rgba(255,255,255,.08);border-radius:28px;
+      background:
+        linear-gradient(135deg,transparent 49.5%,rgba(99,214,255,.24) 50%,transparent 50.5%),
+        linear-gradient(45deg,transparent 49.5%,rgba(126,240,193,.12) 50%,transparent 50.5%);
+      background-size:48px 48px;
+      opacity:.45;
+    }
+    .drone{
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:210px;height:80px;border-radius:20px;
+      background:linear-gradient(135deg,#202b39,#0d1218);
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow:0 20px 60px rgba(0,0,0,.45)
+    }
+    .drone:before,.drone:after{
+      content:"";position:absolute;top:28px;width:100px;height:8px;background:#283544;border-radius:999px
+    }
+    .drone:before{left:-85px;transform:rotate(10deg)}
+    .drone:after{right:-85px;transform:rotate(-10deg)}
+    .camera{position:absolute;width:48px;height:42px;border-radius:12px;left:81px;bottom:-26px;background:#070b10;border:1px solid rgba(255,255,255,.14)}
+    .camera:after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#14202c;left:13px;top:10px;border:2px solid var(--accent)}
+    .hero-note{position:relative;z-index:2;background:rgba(11,15,20,.75);backdrop-filter:blur(10px);border:1px solid var(--line);padding:18px;border-radius:18px;color:var(--muted)}
+    section{padding:84px 0}
+    .section-head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:34px}
+    .section-head h2{font-size:clamp(2rem,4vw,3.7rem);line-height:1.05;letter-spacing:-.04em;margin:0}
+    .section-head p{color:var(--muted);max-width:560px;margin:0}
+    .grid{display:grid;gap:18px}
+    .services{grid-template-columns:repeat(3,1fr)}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));
+      border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+      min-height:220px;
+    }
+    .num{font-size:.82rem;color:var(--accent);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .card h3{font-size:1.3rem;margin:14px 0 10px}
+    .card p{color:var(--muted);margin:0}
+    .benefits{grid-template-columns:repeat(4,1fr)}
+    .benefit{padding:24px;border-top:1px solid var(--line)}
+    .benefit strong{display:block;font-size:1.1rem;margin-bottom:8px}
+    .benefit span{color:var(--muted)}
+    .refs{grid-template-columns:1.2fr .8fr .8fr}
+    .ref{
+      min-height:300px;border-radius:var(--radius);padding:24px;
+      border:1px solid var(--line);position:relative;overflow:hidden;
+      display:flex;align-items:flex-end;background:var(--surface)
+    }
+    .ref::before{content:"";position:absolute;inset:0;background:
+      linear-gradient(to top,rgba(5,8,12,.85),rgba(5,8,12,.1) 60%),
+      radial-gradient(circle at 70% 20%,rgba(99,214,255,.2),transparent 25%),
+      linear-gradient(135deg,#182330,#0f151d)}
+    .ref:nth-child(2)::before{background:
+      linear-gradient(to top,rgba(5,8,12,.85),rgba(5,8,12,.1) 60%),
+      radial-gradient(circle at 30% 20%,rgba(126,240,193,.16),transparent 28%),
+      linear-gradient(135deg,#1e262e,#10151a)}
+    .ref:nth-child(3)::before{background:
+      linear-gradient(to top,rgba(5,8,12,.85),rgba(5,8,12,.1) 60%),
+      radial-gradient(circle at 70% 30%,rgba(255,255,255,.08),transparent 28%),
+      linear-gradient(135deg,#16212a,#0d1216)}
+    .ref-content{position:relative;z-index:2}
+    .ref small{color:var(--accent-2);font-weight:700}
+    .ref h3{margin:8px 0 0;font-size:1.45rem}
+    .contact{
+      border:1px solid var(--line);border-radius:32px;padding:42px;
+      background:linear-gradient(135deg,rgba(99,214,255,.08),rgba(126,240,193,.04)),var(--surface)
+    }
+    .contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:40px;align-items:center}
+    .contact h2{font-size:clamp(2.2rem,5vw,4.7rem);letter-spacing:-.05em;line-height:1;margin:0 0 18px}
+    .contact p{color:var(--muted);max-width:620px}
+    .contact-box{display:grid;gap:12px}
+    .contact-item{padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02)}
+    .contact-item small{display:block;color:var(--muted);margin-bottom:4px}
+    footer{padding:34px 0 48px;color:var(--muted);font-size:.92rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px}
+    @media (max-width:900px){
+      .hero-grid,.contact-grid{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr 1fr}
+      .benefits{grid-template-columns:1fr 1fr}
+      .refs{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hero-card{min-height:360px}
+    }
+    @media (max-width:620px){
+      .services,.benefits{grid-template-columns:1fr}
+      .hero{padding-top:64px}
+      h1{font-size:3.4rem}
+      .contact{padding:28px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Blickwinkel<span>57</span></a>
+      <div class="nav-links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#vorteile">Vorteile</a>
+        <a href="#referenzen">Referenzen</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <a class="btn" href="#kontakt">Projekt anfragen</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Professionelle Drohnendienstleistungen</div>
+          <h1>Neue Perspektiven. Präzise aus der Luft.</h1>
+          <p class="lead">Blickwinkel57 liefert hochwertige Luftaufnahmen, visuelle Dokumentation und effiziente Drohnenlösungen für Unternehmen, Immobilien, Bauprojekte und besondere Vorhaben.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#kontakt">Unverbindlich anfragen</a>
+            <a class="btn secondary" href="#leistungen">Leistungen ansehen</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Abstrakte Darstellung einer Drohne">
+          <div class="drone"><div class="camera"></div></div>
+          <div class="hero-note">Präzise Planung, sichere Durchführung und aussagekräftige Ergebnisse – vom einzelnen Luftbild bis zur fortlaufenden Projektdokumentation.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Leistungen</h2>
+          <p>Flexible Drohnenservices für visuelle Kommunikation, Dokumentation und technische Anwendungen.</p>
+        </div>
+        <div class="grid services">
+          <article class="card"><div class="num">01</div><h3>Luftaufnahmen & Imagecontent</h3><p>Hochwertige Foto- und Videoaufnahmen aus der Luft für Websites, Social Media, Präsentationen und Marketing.</p></article>
+          <article class="card"><div class="num">02</div><h3>Immobilien & Grundstücke</h3><p>Professionelle Perspektiven für Exposés, Vermarktung, Grundstücksdokumentation und Standortpräsentation.</p></article>
+          <article class="card"><div class="num">03</div><h3>Baustellendokumentation</h3><p>Regelmäßige Luftaufnahmen zur transparenten Darstellung von Baufortschritt und Projektentwicklung.</p></article>
+          <article class="card"><div class="num">04</div><h3>Inspektionen</h3><p>Visuelle Kontrolle schwer zugänglicher Bereiche wie Dächer, Fassaden, Anlagen oder technische Strukturen.</p></article>
+          <article class="card"><div class="num">05</div><h3>Mapping & Übersicht</h3><p>Strukturierte Luftbilder und Übersichten für Flächen, Gelände, Planung und projektbezogene Auswertung.</p></article>
+          <article class="card"><div class="num">06</div><h3>Individuelle Einsätze</h3><p>Maßgeschneiderte Drohnenflüge für besondere Anforderungen, Projekte und Dokumentationsaufgaben.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="vorteile">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Warum Blickwinkel57?</h2>
+          <p>Professionelle Ergebnisse entstehen aus guter Vorbereitung, klarer Kommunikation und einem sicheren Workflow.</p>
+        </div>
+        <div class="grid benefits">
+          <div class="benefit"><strong>Neue Perspektiven</strong><span>Bildwelten, die Aufmerksamkeit schaffen und Zusammenhänge sichtbar machen.</span></div>
+          <div class="benefit"><strong>Effizient</strong><span>Schnelle Erfassung großer oder schwer zugänglicher Bereiche.</span></div>
+          <div class="benefit"><strong>Projektorientiert</strong><span>Leistungen passend zu Einsatz, Ziel und gewünschtem Ergebnis.</span></div>
+          <div class="benefit"><strong>Professioneller Ablauf</strong><span>Von der Abstimmung über die Flugplanung bis zur fertigen Übergabe.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="referenzen">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Referenzen</h2>
+          <p>Hier können später echte Projekte, Kundenaufträge und Vorher-Nachher-Beispiele ergänzt werden.</p>
+        </div>
+        <div class="grid refs">
+          <article class="ref"><div class="ref-content"><small>Beispielprojekt</small><h3>Immobilienaufnahmen aus der Luft</h3></div></article>
+          <article class="ref"><div class="ref-content"><small>Beispielprojekt</small><h3>Baustellenfortschritt dokumentiert</h3></div></article>
+          <article class="ref"><div class="ref-content"><small>Beispielprojekt</small><h3>Technische Sichtprüfung</h3></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="wrap">
+        <div class="contact">
+          <div class="contact-grid">
+            <div>
+              <h2>Projekt aus der Luft geplant?</h2>
+              <p>Beschreiben Sie kurz Ihr Vorhaben. Blickwinkel57 erstellt Ihnen gerne ein passendes Angebot für Ihren Drohneneinsatz.</p>
+              <a class="btn" href="mailto:info@blickwinkel57.de">E-Mail senden</a>
+            </div>
+            <div class="contact-box">
+              <div class="contact-item"><small>E-Mail</small><strong>info@blickwinkel57.de</strong></div>
+              <div class="contact-item"><small>Telefon</small><strong>Telefonnummer ergänzen</strong></div>
+              <div class="contact-item"><small>Einsatzgebiet</small><strong>Region / deutschlandweit ergänzen</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© 2026 Blickwinkel57</div>
+      <div><a href="#">Impressum</a> · <a href="#">Datenschutz</a></div>
+    </div>
+  </footer>
+</body>
+</html>
